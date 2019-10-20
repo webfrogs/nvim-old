@@ -22,6 +22,7 @@ set shiftwidth=2
 set softtabstop=2
 
 " terminal settings
+let g:neoterm_autoscroll = 1
 nnoremap <leader>t :set splitbelow<CR>:split<CR>:terminal<CR>
 autocmd TermOpen term://* startinsert
 tnoremap <C-N> <C-\><C-N>
