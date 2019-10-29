@@ -38,7 +38,7 @@ nnoremap <LEADER>l <C-w>l
 " === Vim-plug setting
 " ===
 call plug#begin('~/.config/nvim/plugged')
-Plug 'liuchengxu/eleline.vim'
+Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'junegunn/fzf'
@@ -56,5 +56,3 @@ call plug#end()
 nmap tt :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
-" eleline setting
-let g:airline_powerline_fonts = 1
