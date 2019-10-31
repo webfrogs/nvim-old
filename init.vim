@@ -25,7 +25,8 @@ set softtabstop=2
 let g:neoterm_autoscroll = 1
 nnoremap <leader>t :set splitbelow<CR>:split<CR>:terminal<CR>
 autocmd TermOpen term://* startinsert
-tnoremap <C-N> <C-\><C-N>
+tnoremap <C-[> <C-\><C-N>
+tnoremap <C-]> <C-\><C-N>:q<CR>
 
 " window switch
 nnoremap <LEADER>w <C-w>w
@@ -43,6 +44,9 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+
+" Editor Enhancement
+Plug 'jiangmiao/auto-pairs'
 
 " Auto Complete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
