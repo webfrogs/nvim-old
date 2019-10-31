@@ -23,7 +23,7 @@ set softtabstop=2
 
 " terminal settings
 let g:neoterm_autoscroll = 1
-nnoremap <leader>t :set splitbelow<CR>:split<CR>:terminal<CR>
+nnoremap <leader>t :set splitbelow<CR>:split<CR>:res 15<CR>:terminal<CR>
 autocmd TermOpen term://* startinsert
 tnoremap <C-[> <C-\><C-N>
 tnoremap <C-]> <C-\><C-N>:q<CR>
@@ -47,6 +47,9 @@ Plug 'junegunn/fzf.vim'
 
 " Editor Enhancement
 Plug 'jiangmiao/auto-pairs'
+
+" Dockerfile
+Plug 'ekalinin/Dockerfile.vim'
 
 " Auto Complete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
