@@ -24,7 +24,9 @@ set softtabstop=2
 " terminal settings
 let g:neoterm_autoscroll = 1
 nnoremap <leader>t :set splitbelow<CR>:split<CR>:res 15<CR>:terminal<CR>
-autocmd TermOpen term://* startinsert
+autocmd TermOpen term://* startinsert | setlocal nonumber norelativenumber
+" I like relative numbering when in normal mode.
+"autocmd TermOpen * setlocal relativenumber 
 tnoremap <C-[> <C-\><C-N>
 tnoremap <C-]> <C-\><C-N>:q<CR>
 
