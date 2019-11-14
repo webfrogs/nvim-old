@@ -20,6 +20,7 @@ set noexpandtab
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
+filetype plugin on
 
 " terminal settings
 let g:neoterm_autoscroll = 1
@@ -47,6 +48,7 @@ Plug 'junegunn/fzf.vim'
 
 " Editor Enhancement
 Plug 'jiangmiao/auto-pairs'
+Plug 'scrooloose/nerdcommenter'
 
 " Dockerfile
 Plug 'ekalinin/Dockerfile.vim'
@@ -58,6 +60,11 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'fatih/vim-go'
 
 call plug#end()
+
+" ===
+" === nerdcommenter plugin setting
+" ===
+let g:NERDSpaceDelims = 1
 
 " ===
 " === Nerdtree plugin setting
