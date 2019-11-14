@@ -24,7 +24,7 @@ set softtabstop=2
 " terminal settings
 let g:neoterm_autoscroll = 1
 nnoremap <leader>t :set splitbelow<CR>:split<CR>:res 15<CR>:terminal<CR>
-autocmd TermOpen term://* startinsert | setlocal nonumber norelativenumber
+autocmd TermOpen term://* startinsert | setlocal nonumber norelativenumber | setlocal signcolumn=no
 tnoremap <C-[> <C-\><C-N>
 tnoremap <C-]> <C-\><C-N>:q<CR>
 
@@ -62,16 +62,22 @@ call plug#end()
 " ===
 " === Nerdtree plugin setting
 " ===
-nmap tt :NERDTreeToggle<CR>
+nmap tt :NERDTreeToggle<CR>:setlocal signcolumn=no<CR>
 let NERDTreeShowHidden=1
 
 " ===
-" === coc plugin setting
+" === vim-go plugin setting
 " ===
 
 " disable vim-go :GoDef short cut (gd)
 " this is handled by LanguageClient [LC]
 let g:go_def_mapping_enabled = 0
+let g:go_fmt_command = "goimports"
+
+" ===
+" === coc plugin setting
+" ===
+
 
 " if hidden is not set, TextEdit might fail.
 set hidden
@@ -182,19 +188,19 @@ let g:lightline = {
 
 " Using CocList
 " Show all diagnostics
-nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
+"nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
 " Manage extensions
-nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+"nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
 " Show commands
-nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
+"nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
 " Find symbol of current document
-nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+"nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
 " Search workspace symbols
-nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+"nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
 " Do default action for next item.
-nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+"nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
-nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+"nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
-nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+"nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
