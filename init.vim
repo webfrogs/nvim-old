@@ -48,7 +48,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
 " Color scheme
-Plug 'phanviet/vim-monokai-pro'
+Plug 'drewtempelmeyer/palenight.vim'
 
 " Editor Enhancement
 Plug 'jiangmiao/auto-pairs'
@@ -66,10 +66,10 @@ Plug 'fatih/vim-go'
 call plug#end()
 
 " ===
-" === vim-monokai-pro plugin setting
+" === Color scheme setting
 " ===
-set termguicolors
-colorscheme monokai_pro
+set background=dark
+colorscheme palenight
 
 " ===
 " === nerdcommenter plugin setting
