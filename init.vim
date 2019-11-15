@@ -22,6 +22,7 @@ set shiftwidth=2
 set softtabstop=2
 filetype plugin on
 
+
 " terminal settings
 let g:neoterm_autoscroll = 1
 nnoremap <leader>t :set splitbelow<CR>:split<CR>:res 15<CR>:terminal<CR>
@@ -46,6 +47,9 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
+" Color scheme
+Plug 'phanviet/vim-monokai-pro'
+
 " Editor Enhancement
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
@@ -60,6 +64,12 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'fatih/vim-go'
 
 call plug#end()
+
+" ===
+" === vim-monokai-pro plugin setting
+" ===
+set termguicolors
+colorscheme monokai_pro
 
 " ===
 " === nerdcommenter plugin setting
