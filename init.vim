@@ -25,7 +25,7 @@ filetype plugin on
 
 " terminal settings
 let g:neoterm_autoscroll = 1
-nnoremap <leader>t :set splitbelow<CR>:split<CR>:res 15<CR>:terminal<CR>
+nnoremap <leader>t :set splitbelow<CR>:split<CR><C-w>J:res 10<CR>:terminal<CR>
 autocmd TermOpen term://* startinsert | setlocal nonumber norelativenumber | setlocal signcolumn=no
 tnoremap <C-[> <C-\><C-N>
 tnoremap <C-]> <C-\><C-N>:q<CR>
