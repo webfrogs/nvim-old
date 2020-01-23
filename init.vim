@@ -2,8 +2,13 @@
 " === Auto load for first time uses
 " ===
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
-	silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-				\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	"silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+	"			\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    !rm -rf ~/.config/nvim/tmp && mkdir ~/.config/nvim/tmp
+                \ && git clone https://github.com/junegunn/vim-plug.git ~/.config/nvim/tmp
+                \ && mkdir ~/.config/nvim/autoload && cp ~/.config/nvim/tmp/plug.vim ~/.config/nvim/autoload
+                \ && rm -rf ~/.config/nvim/tmp
+
 	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
