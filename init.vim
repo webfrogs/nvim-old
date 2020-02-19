@@ -27,6 +27,11 @@ set shiftwidth=2
 set softtabstop=2
 filetype plugin on
 
+" use system clipboard
+set clipboard+=unnamedplus
+nnoremap <LEADER>y "+y
+nnoremap <LEADER>p "+p
+
 
 " terminal settings
 let g:neoterm_autoscroll = 1
