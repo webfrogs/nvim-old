@@ -28,7 +28,7 @@ set softtabstop=2
 filetype plugin on
 
 " use system clipboard
-set clipboard+=unnamedplus
+" set clipboard+=unnamedplus
 nnoremap <LEADER>y "+y
 nnoremap <LEADER>p "+p
 
