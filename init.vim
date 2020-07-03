@@ -35,7 +35,7 @@ nnoremap <LEADER>p "+p
 
 " terminal settings
 let g:neoterm_autoscroll = 1
-nnoremap <leader>t :set splitbelow<CR>:split<CR>:res 10<CR>:terminal<CR>
+nnoremap <LEADER>t :set splitbelow<CR>:split<CR>:res 10<CR>:terminal<CR>
 autocmd TermOpen term://* startinsert | setlocal nonumber norelativenumber | setlocal signcolumn=no
 tnoremap <C-[> <C-\><C-N>
 tnoremap <C-]> <C-\><C-N>:q<CR>
@@ -46,6 +46,9 @@ nnoremap <LEADER>h <C-w>h
 nnoremap <LEADER>j <C-w>j
 nnoremap <LEADER>k <C-w>k
 nnoremap <LEADER>l <C-w>l
+nnoremap <LEADER>m <C-w>_
+nnoremap <LEADER>n :res 10<CR>
+nnoremap <LEADER>q <C-w>q
 
 " ===
 " === Vim-plug setting
