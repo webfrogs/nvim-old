@@ -102,6 +102,11 @@ nmap tt :NERDTreeToggle<CR>:setlocal signcolumn=no<CR>
 let NERDTreeShowHidden=1
 
 " ===
+" === markdown plugins setting
+" ===
+let g:vim_markdown_folding_disabled = 1
+
+" ===
 " === vim-go plugin setting
 " ===
 
