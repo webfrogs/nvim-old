@@ -76,6 +76,12 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Golang
 Plug 'fatih/vim-go'
 
+" Markdown
+Plug 'godlygeek/tabular' " needed by vim-markdown plugin
+Plug 'plasticboy/vim-markdown'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+
+
 call plug#end()
 
 " ===
