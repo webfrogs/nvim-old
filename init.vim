@@ -118,6 +118,12 @@ let g:go_fmt_command = "goimports"
 " ===
 " === coc plugin setting
 " ===
+let g:coc_global_extensions = [
+  \ 'coc-json',
+  \ 'coc-snippets',
+  \ 'coc-vimlsp']
+
+
 
 
 " if hidden is not set, TextEdit might fail.
