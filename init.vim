@@ -60,6 +60,9 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
+" toml support
+Plug 'cespare/vim-toml'
+
 " Color scheme
 Plug 'drewtempelmeyer/palenight.vim'
 
