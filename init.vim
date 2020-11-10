@@ -69,6 +69,8 @@ Plug 'drewtempelmeyer/palenight.vim'
 " Editor Enhancement
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
+Plug 'gcmt/wildfire.vim'
+Plug 'tpope/vim-surround'
 
 " Dockerfile
 Plug 'ekalinin/Dockerfile.vim'
