@@ -250,7 +250,7 @@ let g:lightline = {
       \ },
       \ }
 " Use auocmd to force lightline update.
-autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
+" autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 
 function! LightlineFilename()
   let root = fnamemodify(get(b:, 'git_dir'), ':h')
