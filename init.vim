@@ -49,6 +49,7 @@ nnoremap <LEADER>l <C-w>l
 nnoremap <LEADER>m <C-w>_
 nnoremap <LEADER>n :res 10<CR>
 nnoremap <LEADER>q <C-w>q
+nnoremap <LEADER>1 :noh<CR>
 
 " ===
 " === Vim-plug setting
@@ -261,6 +262,12 @@ function! LightlineFilename()
   return expand('%')
 endfunction
 
+function! TermRunning(buf)
+    return getbufvar(a:buf, '&buftype') !=# 'terminal' ? 0 :
+        \ has('terminal') ? term_getstatus(a:buf) =~# 'running' :
+        \ has('nvim') ? jobwait([getbufvar(a:buf, '&channel')], 0)[0] == -1 :
+        \ 0
+endfunction
 
 " Using CocList
 " Show all diagnostics
