@@ -37,8 +37,8 @@ nnoremap <LEADER>p "+p
 let g:neoterm_autoscroll = 1
 nnoremap <LEADER>t :set splitbelow<CR>:split<CR>:res 10<CR>:terminal<CR>
 autocmd TermOpen term://* startinsert | setlocal nonumber norelativenumber | setlocal signcolumn=no
-tnoremap <C-[> <C-\><C-N>
-tnoremap <C-]> <C-\><C-N>:q<CR>
+tnoremap <C-]> <C-\><C-N>
+tnoremap <C-q> <C-\><C-N>:q<CR>
 
 " window switch
 nnoremap <LEADER>w <C-w>w
@@ -106,6 +106,8 @@ let g:NERDSpaceDelims = 1
 " ===
 nmap tt :NERDTreeToggle<CR>:setlocal signcolumn=no<CR>
 let NERDTreeShowHidden=1
+" Start NERDTree and leave the cursor in it.
+"autocmd VimEnter * NERDTree
 
 " ===
 " === markdown plugins setting
