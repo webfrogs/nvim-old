@@ -27,6 +27,9 @@ set shiftwidth=2
 set softtabstop=2
 filetype plugin on
 
+" hotkeys
+nnoremap <LEADER>1 :noh<CR>
+
 " use system clipboard
 " set clipboard+=unnamedplus
 nnoremap <LEADER>y "+y
@@ -49,7 +52,11 @@ nnoremap <LEADER>l <C-w>l
 nnoremap <LEADER>m <C-w>_
 nnoremap <LEADER>n :res 10<CR>
 nnoremap <LEADER>q <C-w>q
-nnoremap <LEADER>1 :noh<CR>
+
+" tab switch
+nnoremap <C-j> :tabprevious<CR>
+nnoremap <C-k> :tabnext<CR>
+
 
 " ===
 " === Vim-plug setting
