@@ -29,6 +29,7 @@ filetype plugin on
 
 " hotkeys
 nnoremap <LEADER>1 :noh<CR>
+inoremap jk <Esc>
 
 " use system clipboard
 " set clipboard+=unnamedplus
@@ -40,7 +41,7 @@ nnoremap <LEADER>p "+p
 let g:neoterm_autoscroll = 1
 nnoremap <LEADER>t :set splitbelow<CR>:split<CR>:res 10<CR>:terminal<CR>
 autocmd TermOpen term://* startinsert | setlocal nonumber norelativenumber | setlocal signcolumn=no
-tnoremap <C-]> <C-\><C-N>
+tnoremap <C-[> <C-\><C-N>
 tnoremap <C-q> <C-\><C-N>:q<CR>
 
 " window switch
