@@ -80,6 +80,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
 Plug 'gcmt/wildfire.vim'
 Plug 'tpope/vim-surround'
+Plug 'easymotion/vim-easymotion'
 
 " Dockerfile
 Plug 'ekalinin/Dockerfile.vim'
