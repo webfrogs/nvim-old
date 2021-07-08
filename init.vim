@@ -110,6 +110,7 @@ colorscheme palenight
 " ===
 let g:NERDSpaceDelims = 1
 
+
 " ===
 " === Nerdtree plugin setting
 " ===
@@ -117,6 +118,23 @@ nmap tt :NERDTreeToggle<CR>:setlocal signcolumn=no<CR>
 let NERDTreeShowHidden=1
 " Start NERDTree and leave the cursor in it.
 "autocmd VimEnter * NERDTree
+
+" Check if NERDTree is open or active
+function IsNERDTreeOpen()
+    return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+endfunction
+
+" Call NERDTreeFind if NERDTree is active, current window contains a modifiable
+" file, and we're not in vimdiff
+function SyncTree()
+    if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
+        NERDTreeFind
+        wincmd p
+    endif
+endfunction
+
+" Highlight currently open buffer in NERDTree
+nmap <Leader>o :call SyncTree()<CR>
 
 " ===
 " === markdown plugins setting
