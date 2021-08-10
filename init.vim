@@ -57,6 +57,7 @@ nnoremap <LEADER>q <C-w>q
 " tab switch
 nnoremap <C-j> :tabprevious<CR>
 nnoremap <C-k> :tabnext<CR>
+nnoremap <LEADER>tn :tabnew<CR>
 
 
 " ===
