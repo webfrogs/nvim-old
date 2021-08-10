@@ -113,7 +113,25 @@ let g:NERDSpaceDelims = 1
 " ===
 " === fzf plugin setting
 " ===
+function! RGSearch(filename)
+	let command_fmt = 'rg --with-filename --column --line-number' 
+		\ . ' --no-heading --color=always --smart-case -- %s ' 
+		\ . a:filename . ' || true'
+    let initial_command = printf(command_fmt, shellescape(''))
+    let reload_command = printf(command_fmt, '{q}')
+    let spec = {'options': ['--phony', '--query', '', '--bind', 
+		\ 'change:reload:'.reload_command]}
+    call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), 0)
+endfunction
+
+" search files
 nnoremap <leader>sf :Files<CR>
+" search content in project
+nnoremap <leader>sp :call RGSearch('')<CR>
+" search content in current file
+nnoremap <leader>sc :call RGSearch(fnameescape(expand('%')))<CR>
+" search buffer
+nnoremap <leader>sb :Buffers<CR>
 
 " ===
 " === Nerdtree plugin setting
