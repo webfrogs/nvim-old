@@ -110,6 +110,10 @@ colorscheme palenight
 " ===
 let g:NERDSpaceDelims = 1
 
+" ===
+" === fzf plugin setting
+" ===
+nnoremap <leader>sf :Files<CR>
 
 " ===
 " === Nerdtree plugin setting
