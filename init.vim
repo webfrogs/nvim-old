@@ -39,13 +39,14 @@ nnoremap <LEADER>p "+p
 
 " terminal settings
 let g:neoterm_autoscroll = 1
-nnoremap <LEADER>t :set splitbelow<CR>:split<CR>:res 10<CR>:terminal<CR>
+nnoremap <LEADER>wt :set splitbelow<CR>:split<CR>:res 10<CR>:terminal<CR>
 autocmd TermOpen term://* startinsert | setlocal nonumber norelativenumber | setlocal signcolumn=no
 tnoremap <C-[> <C-\><C-N>
 tnoremap <C-q> <C-\><C-N>:q<CR>
 
 " window switch
-nnoremap <LEADER>w <C-w>w
+nnoremap <LEADER>ww <C-w>w
+nnoremap <LEADER>wn <C-w>n
 nnoremap <LEADER>h <C-w>h
 nnoremap <LEADER>j <C-w>j
 nnoremap <LEADER>k <C-w>k
@@ -157,7 +158,7 @@ function SyncTree()
 endfunction
 
 " Highlight currently open buffer in NERDTree
-nmap <Leader>o :call SyncTree()<CR>
+nmap <Leader>ob :call SyncTree()<CR>
 
 " ===
 " === markdown plugins setting
