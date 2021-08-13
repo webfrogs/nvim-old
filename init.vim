@@ -45,15 +45,15 @@ tnoremap <C-[> <C-\><C-N>
 tnoremap <C-q> <C-\><C-N>:q<CR>
 
 " window switch
-nnoremap <LEADER>ww <C-w>w
-nnoremap <LEADER>wn <C-w>n
-nnoremap <LEADER>h <C-w>h
-nnoremap <LEADER>j <C-w>j
-nnoremap <LEADER>k <C-w>k
-nnoremap <LEADER>l <C-w>l
-nnoremap <LEADER>m <C-w>_
+" nnoremap <LEADER>ww <C-w>w
+" nnoremap <LEADER>wn <C-w>n
+" nnoremap <LEADER>h <C-w>h
+" nnoremap <LEADER>j <C-w>j
+" nnoremap <LEADER>k <C-w>k
+" nnoremap <LEADER>l <C-w>l
+" nnoremap <LEADER>m <C-w>_
 nnoremap <LEADER>n :res 10<CR>
-nnoremap <LEADER>q <C-w>q
+" nnoremap <LEADER>q <C-w>q
 
 " tab switch
 nnoremap <C-j> :tabprevious<CR>
