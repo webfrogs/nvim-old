@@ -43,6 +43,7 @@ nnoremap <LEADER>wt :set splitbelow<CR>:split<CR>:res 10<CR>:terminal<CR>
 autocmd TermOpen term://* startinsert | setlocal nonumber norelativenumber | setlocal signcolumn=no
 tnoremap <C-[> <C-\><C-N>
 tnoremap <C-q> <C-\><C-N>:q<CR>
+nnoremap <LEADER>ot :terminal<CR>
 
 " window switch
 " nnoremap <LEADER>ww <C-w>w
