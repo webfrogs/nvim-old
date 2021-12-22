@@ -181,6 +181,7 @@ let g:go_fmt_command = "goimports"
 let g:coc_global_extensions = [
   \ 'coc-json',
   \ 'coc-snippets',
+  \ 'coc-lua',
   \ 'coc-vimlsp']
 
 
