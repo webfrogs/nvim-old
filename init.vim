@@ -36,6 +36,9 @@ inoremap jk <Esc>
 nnoremap <LEADER>y "+y
 nnoremap <LEADER>p "+p
 
+" copy current file and cursor line to clipboard
+nnoremap <LEADER>d :let @+ = expand("%") . ":" . line(".")<CR>
+
 
 " terminal settings
 let g:neoterm_autoscroll = 1
