@@ -30,6 +30,7 @@ filetype plugin on
 " hotkeys
 nnoremap <LEADER>1 :noh<CR>
 inoremap jk <Esc>
+nnoremap <LEADER>e :w<CR>:e<CR>
 
 " use system clipboard
 " set clipboard+=unnamedplus
