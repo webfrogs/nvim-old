@@ -57,7 +57,7 @@ nnoremap <LEADER>ot :terminal<CR>
 " nnoremap <LEADER>k <C-w>k
 " nnoremap <LEADER>l <C-w>l
 " nnoremap <LEADER>m <C-w>_
-nnoremap <LEADER>n :res 10<CR>
+" nnoremap <LEADER>n :res 10<CR>
 " nnoremap <LEADER>q <C-w>q
 
 " tab switch
@@ -88,6 +88,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'gcmt/wildfire.vim'
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
+Plug 'akinsho/toggleterm.nvim'
 
 " Dockerfile
 Plug 'ekalinin/Dockerfile.vim'
@@ -116,6 +117,22 @@ colorscheme palenight
 " === nerdcommenter plugin setting
 " ===
 let g:NERDSpaceDelims = 1
+
+" ===
+" === toggleterm plugin setting
+" ===
+" set
+let g:toggleterm_terminal_mapping = '<C-t>'
+" or manually...
+autocmd TermEnter term://*toggleterm#*
+      \ tnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
+
+" By applying the mappings this way you can pass a count to your
+" mapping to open a specific window.
+" For example: 2<C-t> will open terminal 2
+nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
+inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>
+
 
 " ===
 " === fzf plugin setting
