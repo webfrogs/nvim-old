@@ -70,9 +70,10 @@ nnoremap <LEADER>tn :tabnew<CR>
 " === Vim-plug setting
 " ===
 call plug#begin('~/.config/nvim/plugged')
+" window enhancement
 Plug 'itchyny/lightline.vim'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+" Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
@@ -89,6 +90,8 @@ Plug 'gcmt/wildfire.vim'
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
 Plug 'akinsho/toggleterm.nvim'
+Plug 'kyazdani42/nvim-web-devicons' " for file icons
+Plug 'kyazdani42/nvim-tree.lua'
 
 " Dockerfile
 Plug 'ekalinin/Dockerfile.vim'
@@ -114,6 +117,13 @@ set background=dark
 colorscheme palenight
 
 " ===
+" === nvim-tree plugin setting
+" ===
+nnoremap <C-n> :NvimTreeToggle<CR>
+nnoremap <leader>r :NvimTreeRefresh<CR>
+nnoremap <leader>n :NvimTreeFindFile<CR>
+
+" ===
 " === nerdcommenter plugin setting
 " ===
 let g:NERDSpaceDelims = 1
@@ -122,7 +132,7 @@ let g:NERDSpaceDelims = 1
 " === toggleterm plugin setting
 " ===
 " set
-let g:toggleterm_terminal_mapping = '<C-t>'
+" let g:toggleterm_terminal_mapping = '<C-t>'
 " or manually...
 autocmd TermEnter term://*toggleterm#*
       \ tnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
@@ -130,8 +140,8 @@ autocmd TermEnter term://*toggleterm#*
 " By applying the mappings this way you can pass a count to your
 " mapping to open a specific window.
 " For example: 2<C-t> will open terminal 2
-nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
-inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>
+" nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
+" inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>
 
 
 " ===
@@ -160,7 +170,7 @@ nnoremap <leader>sb :Buffers<CR>
 " ===
 " === Nerdtree plugin setting
 " ===
-nmap tt :NERDTreeToggle<CR>:setlocal signcolumn=no<CR>
+"nmap tt :NERDTreeToggle<CR>:setlocal signcolumn=no<CR>
 let NERDTreeShowHidden=1
 " Start NERDTree and leave the cursor in it.
 "autocmd VimEnter * NERDTree
@@ -180,7 +190,7 @@ function SyncTree()
 endfunction
 
 " Highlight currently open buffer in NERDTree
-nmap <Leader>ob :call SyncTree()<CR>
+"nmap <Leader>ob :call SyncTree()<CR>
 
 " ===
 " === markdown plugins setting
@@ -363,3 +373,7 @@ endfunction
 " Resume latest coc list
 "nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
+
+"=============================== lua settings ===============================
+lua require("init")
+"=============================== end of lua settings ===============================
