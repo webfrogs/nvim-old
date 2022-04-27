@@ -20,12 +20,12 @@ vim.g.maplocalleader = ' '
 --
 
 -- Editor
-keymap("n", "<c-_>", ":CommentToggle<cr>", opts)
-keymap("v", "<c-_>", ":CommentToggle<cr>", opts)
+keymap("n", "<C-_>", ":CommentToggle<cr>", opts)
+keymap("v", "<C-_>", ":CommentToggle<cr>", opts)
 
 
 -- FileExpoler
-keymap("n", "<c-n>", ":NvimTreeToggle<cr>", opts)
+keymap("n", "<C-n>", ":NvimTreeToggle<cr>", opts)
 -- keymap("n", "<leader>f", ":NvimTreeFindFile<cr>", opts)
 
 
