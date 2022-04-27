@@ -6,9 +6,11 @@ local term_opts = { silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 --Remap space as leader key
-keymap("", ";", "<Nop>", opts)
-vim.g.mapleader = ";"
-vim.g.maplocalleader = ";"
+-- keymap("", ";", "<Nop>", opts)
+-- vim.g.mapleader = ";"
+-- vim.g.maplocalleader = ";"
+vim.g.mapleader = "<Space>"
+vim.g.maplocalleader = "<Space>"
 
 -- Modes normal_mode = "n",
 --   insert_mode = "i",
@@ -18,6 +20,11 @@ vim.g.maplocalleader = ";"
 --
 
 -- FileExpoler
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
-keymap("n", "<leader>f", ":NvimTreeFindFile<cr>", opts)
+keymap("n", "<C-n>", ":NvimTreeToggle<cr>", opts)
+-- keymap("n", "<leader>f", ":NvimTreeFindFile<cr>", opts)
+
+-- System clipboard
+keymap("n", "<leader>y", "\"+y", opts)
+keymap("n", "<leader>p", "\"+p", opts)
+
 

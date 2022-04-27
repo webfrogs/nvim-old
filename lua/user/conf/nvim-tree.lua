@@ -42,13 +42,20 @@ vim.g.nvim_tree_icons = {
   default = "",
   symlink = "",
   git = {
-    unstaged = "",
-    staged = "S",
+    unstaged = "✗",
+    staged = "✓",
     unmerged = "",
     renamed = "➜",
+    untracked = "★",
     deleted = "",
-    untracked = "U",
     ignored = "◌",
+    --unstaged = "",
+    --staged = "S",
+    --unmerged = "",
+    --renamed = "➜",
+    --deleted = "",
+    --untracked = "U",
+    --ignored = "◌",
   },
   folder = {
     default = "",
@@ -97,6 +104,8 @@ nvim_tree.setup({
       custom_only = false,
       list = {
         -- user mappings go here
+        { key = "t",                            action = "tabnew" },
+        { key = "<C-t>",                        action = "" },
       },
     },
   },
