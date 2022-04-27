@@ -9,8 +9,8 @@ local keymap = vim.api.nvim_set_keymap
 -- keymap("", ";", "<Nop>", opts)
 -- vim.g.mapleader = ";"
 -- vim.g.maplocalleader = ";"
-vim.g.mapleader = "<Space>"
-vim.g.maplocalleader = "<Space>"
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 -- Modes normal_mode = "n",
 --   insert_mode = "i",
@@ -19,9 +19,15 @@ vim.g.maplocalleader = "<Space>"
 --   term_mode = "t", command_mode = "c",
 --
 
+-- Editor
+keymap("n", "<c-_>", ":CommentToggle<cr>", opts)
+keymap("v", "<c-_>", ":CommentToggle<cr>", opts)
+
+
 -- FileExpoler
-keymap("n", "<C-n>", ":NvimTreeToggle<cr>", opts)
+keymap("n", "<c-n>", ":NvimTreeToggle<cr>", opts)
 -- keymap("n", "<leader>f", ":NvimTreeFindFile<cr>", opts)
+
 
 -- System clipboard
 keymap("n", "<leader>y", "\"+y", opts)

@@ -49,6 +49,30 @@ return packer.startup(function(use)
   -- theme
   use "projekt0n/github-nvim-theme"
 
+  -- Editor enhance
+  use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
+  use "terrortylor/nvim-comment"
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
+
+  -- Telescpoe
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+  use {
+    "nvim-telescope/telescope-fzf-native.nvim",
+    run = "make",
+  }
+
+  -- Treesittetr
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  }
+
   use {
     'kyazdani42/nvim-tree.lua',
     requires = {

@@ -1,3 +1,8 @@
 require "user.conf.nvim-tree"
+require "user.conf.nvim-treesitter"
+require "user.conf.nvim-autopairs"
+require "user.conf.nvim-comment"
 require "user.conf.toggleterm"
+require "user.conf.lualine"
+require "user.conf.telescope"
 require "user.conf.github-nvim-theme"

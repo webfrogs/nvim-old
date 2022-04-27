@@ -49,13 +49,6 @@ vim.g.nvim_tree_icons = {
     untracked = "★",
     deleted = "",
     ignored = "◌",
-    --unstaged = "",
-    --staged = "S",
-    --unmerged = "",
-    --renamed = "➜",
-    --deleted = "",
-    --untracked = "U",
-    --ignored = "◌",
   },
   folder = {
     default = "",
