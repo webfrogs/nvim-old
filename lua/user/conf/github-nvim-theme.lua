@@ -1,4 +1,10 @@
-require("github-theme").setup({
+local status_ok, githubTheme = pcall(require, "github-theme")
+if not status_ok then
+  vim.notify("github-theme not found!")
+  return
+end
+
+githubTheme.setup({
   theme_style = "dark",
   function_style = "italic",
   sidebars = {"qf", "vista_kind", "terminal", "packer"},
