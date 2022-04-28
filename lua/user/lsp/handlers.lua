@@ -84,8 +84,16 @@ M.on_attach = function(client, bufnr)
   lsp_highlight_document(client)
 
   -- add outline support for evey lanuage
-  require("aerial").on_attach(client, bufnr)
-  require "lsp_signature".on_attach()
+  --require("aerial").on_attach(client, bufnr)
+  --require "lsp_signature".on_attach()
+  local status_ok, aerial = pcall(require, "aerial")
+  if status_ok then
+    aerial.on_attach(client, bufnr)
+  end
+  local status_ok, lsp_signature = pcall(require, "lsp_signature")
+  if status_ok then
+    lsp_signature.on_attach()
+  end
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

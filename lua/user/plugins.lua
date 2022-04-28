@@ -83,6 +83,8 @@ return packer.startup(function(use)
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  -- use "kosayoda/nvim-lightbulb" -- code action
+  use "ray-x/lsp_signature.nvim" -- show function signature when typing
 
 
   -- cmp plugins
@@ -96,6 +98,9 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-nvim-lua"
   use "f3fora/cmp-spell" -- spell check
+
+  -- snippets
+  use "L3MON4D3/LuaSnip" --snippet engine
 	
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
