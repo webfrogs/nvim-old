@@ -19,13 +19,19 @@ vim.g.maplocalleader = ' '
 --   term_mode = "t", command_mode = "c",
 --
 
+-- Telescope
+keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
+keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
+keymap("n", "<leader>fn", "<cmd>Telescope help_tags<cr>", opts)
+
 -- Editor
 keymap("n", "<C-_>", ":CommentToggle<cr>", opts)
 keymap("v", "<C-_>", ":CommentToggle<cr>", opts)
 
 
 -- FileExpoler
-keymap("n", "<C-n>", ":NvimTreeToggle<cr>", opts)
+keymap("n", "<leader>t", ":NvimTreeToggle<cr>", opts)
 -- keymap("n", "<leader>f", ":NvimTreeFindFile<cr>", opts)
 
 
