@@ -45,6 +45,7 @@ return packer.startup(function(use)
   -- My plugins
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "akinsho/toggleterm.nvim" -- toggle terminal
+  use "rcarriga/nvim-notify"
 
   -- theme
   use "projekt0n/github-nvim-theme"
