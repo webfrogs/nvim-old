@@ -28,6 +28,8 @@ keymap("n", "<leader>fn", "<cmd>Telescope help_tags<cr>", opts)
 -- Editor
 keymap("n", "<C-_>", ":CommentToggle<cr>", opts)
 keymap("v", "<C-_>", ":CommentToggle<cr>", opts)
+keymap("n", "<leader>1", ":noh<cr>", opts)
+keymap("n", "<leader>2", ":cclose<cr>", opts)
 
 
 -- FileExpoler
