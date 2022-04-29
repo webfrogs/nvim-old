@@ -48,6 +48,7 @@ return packer.startup(function(use)
   use "rcarriga/nvim-notify"
   use "nvim-lua/plenary.nvim"
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
+  use "fatih/vim-go"
 
   -- theme
   use "projekt0n/github-nvim-theme"

@@ -12,6 +12,10 @@ local keymap = vim.api.nvim_set_keymap
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- vim-go plugin settings
+vim.g['go_def_mapping_enabled'] = 0
+vim.g['go_fmt_command'] = 'goimports'
+
 -- Modes normal_mode = "n",
 --   insert_mode = "i",
 --   visual_mode = "v",
