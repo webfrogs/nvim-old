@@ -57,6 +57,7 @@ return packer.startup(function(use)
   use "terrortylor/nvim-comment"
   use "tpope/vim-repeat" --  . command enhance
   use "tpope/vim-surround" -- vim surround
+  use "nathom/filetype.nvim" -- speedup by replacing filetype.vim
   -- use "andymass/vim-matchup"
   use {
     'nvim-lualine/lualine.nvim',
