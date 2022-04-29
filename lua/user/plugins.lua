@@ -33,9 +33,9 @@ end
 -- Have packer use a popup window
 packer.init {
   display = {
-    -- open_fn = function()
-    --   return require("packer.util").float { border = "rounded" }
-    -- end,
+    open_fn = function()
+      return require("packer.util").float { border = "rounded" }
+    end,
   },
 }
 
@@ -46,6 +46,8 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "akinsho/toggleterm.nvim" -- toggle terminal
   use "rcarriga/nvim-notify"
+  use "nvim-lua/plenary.nvim"
+  use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
 
   -- theme
   use "projekt0n/github-nvim-theme"
@@ -55,6 +57,7 @@ return packer.startup(function(use)
   use "terrortylor/nvim-comment"
   use "tpope/vim-repeat" --  . command enhance
   use "tpope/vim-surround" -- vim surround
+  -- use "andymass/vim-matchup"
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
@@ -66,6 +69,16 @@ return packer.startup(function(use)
     }
   }
 
+  -- cmp plugins
+  use "hrsh7th/nvim-cmp" -- The completion plugin
+  use "hrsh7th/cmp-buffer" -- buffer completions
+  use "hrsh7th/cmp-path" -- path completions
+  use "hrsh7th/cmp-cmdline" -- cmdline completions
+  use "saadparwaiz1/cmp_luasnip" -- snippet completions
+  use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-nvim-lua"
+  use "f3fora/cmp-spell" -- spell check
+
   -- Telescpoe
   use {
     'nvim-telescope/telescope.nvim',
@@ -75,31 +88,22 @@ return packer.startup(function(use)
     "nvim-telescope/telescope-fzf-native.nvim",
     run = "make",
   }
+  -- use "nvim-telescope/telescope-ui-select.nvim"
+  -- use "nvim-telescope/telescope-live-grep-raw.nvim"
+  -- use "nvim-telescope/telescope-dap.nvim"
 
   -- Treesittetr
   use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   }
+  use "romgrk/nvim-treesitter-context" -- show class/function at the top
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   -- use "kosayoda/nvim-lightbulb" -- code action
   use "ray-x/lsp_signature.nvim" -- show function signature when typing
-
-
-  -- cmp plugins
-  use {
-    "hrsh7th/nvim-cmp",
-  } -- The completion plugin
-  use "hrsh7th/cmp-buffer" -- buffer completions
-  use "hrsh7th/cmp-path" -- path completions
-  use "hrsh7th/cmp-cmdline" -- cmdline completions
-  use "saadparwaiz1/cmp_luasnip" -- snippet completions
-  use "hrsh7th/cmp-nvim-lsp"
-  use "hrsh7th/cmp-nvim-lua"
-  use "f3fora/cmp-spell" -- spell check
 
   -- dap
   use "mfussenegger/nvim-dap"
