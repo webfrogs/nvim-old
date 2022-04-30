@@ -94,12 +94,12 @@ return packer.startup(function(use)
   -- use "nvim-telescope/telescope-live-grep-raw.nvim"
   -- use "nvim-telescope/telescope-dap.nvim"
 
-  -- Treesittetr
+  -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   }
-  use "romgrk/nvim-treesitter-context" -- show class/function at the top
+  use "lewis6991/nvim-treesitter-context" -- show class/function at the top
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
