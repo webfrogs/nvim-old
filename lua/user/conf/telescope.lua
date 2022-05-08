@@ -162,8 +162,8 @@ telescope.setup {
     find_files = {
       theme = "dropdown",
       previewer = false,
-      find_command = { "find", "-type", "f" },
-      -- find_command = {"fd"},
+      -- find_command = { "find", "-type", "f" },
+      find_command = {"fd"},
     },
 
     -- Default configuration for builtin pickers goes here:
