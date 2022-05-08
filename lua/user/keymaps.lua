@@ -50,7 +50,7 @@ keymap("n", "K", "<cmd>lua require'dapui'.eval()<cr>", opts)
 
 -- FileExpoler
 keymap("n", "<leader>t", ":NvimTreeToggle<cr>", opts)
--- keymap("n", "<leader>f", ":NvimTreeFindFile<cr>", opts)
+keymap("n", "<leader>o", ":NvimTreeFindFile<cr>", opts)
 
 
 -- System clipboard
