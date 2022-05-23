@@ -53,6 +53,13 @@ return packer.startup(function(use)
   -- theme
   use "projekt0n/github-nvim-theme"
 
+  -- markdown, see: https://github.com/iamcco/markdown-preview.nvim
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = "cd app && npm install",
+    setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" },
+  })
+
   -- Editor enhance
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "terrortylor/nvim-comment"
