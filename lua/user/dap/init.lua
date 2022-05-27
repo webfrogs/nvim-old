@@ -4,6 +4,8 @@ if not status_ok then
   return
 end
 
+-- dap.set_log_level('TRACE')
+
 local dap_breakpoint = {
   error = {
     text = "🛑",
