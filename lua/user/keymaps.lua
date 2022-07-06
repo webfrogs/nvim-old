@@ -1,7 +1,5 @@
 local opts = { noremap = true, silent = true }
 
-local term_opts = { silent = true }
-
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
@@ -57,4 +55,5 @@ keymap("n", "<leader>o", ":NvimTreeFindFile<cr>", opts)
 keymap("n", "<leader>y", "\"+y", opts)
 keymap("n", "<leader>p", "\"+p", opts)
 
-
+-- copy current file and cursor line to clipboard
+keymap("n", "<leader>l", ":let @+ = expand(\"%\") . \":\" . line(\".\")<CR>", opts)
