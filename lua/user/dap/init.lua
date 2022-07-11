@@ -31,7 +31,8 @@ vim.fn.sign_define("DapBreakpoint", dap_breakpoint.error)
 vim.fn.sign_define("DapStopped", dap_breakpoint.stopped)
 vim.fn.sign_define("DapBreakpointRejected", dap_breakpoint.rejected)
 
-local status_ok, dapvt = pcall(require, "nvim-dap-virtual-text")
+local dapvt
+status_ok, dapvt = pcall(require, "nvim-dap-virtual-text")
 if status_ok then
   dapvt.setup{
     enabled = true,                     -- enable this plugin (the default)
@@ -49,7 +50,8 @@ if status_ok then
 end
 
 -- dap ui
-local status_ok, dapui = pcall(require, "dapui")
+local dapui
+status_ok, dapui = pcall(require, "dapui")
 if status_ok then
   dapui.setup ({
     icons = { expanded = "▾", collapsed = "▸" },

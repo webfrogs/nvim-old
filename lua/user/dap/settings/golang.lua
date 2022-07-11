@@ -4,7 +4,7 @@ if not status_ok then
   return
 end
 
-dap.adapters.go = function(callback, config)
+dap.adapters.go = function(callback, _)
   local stdout = vim.loop.new_pipe(false)
   local handle
   local pid_or_err
