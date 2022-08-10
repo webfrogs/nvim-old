@@ -11,6 +11,7 @@ configs.setup {
     "python",
     "go",
     "markdown",
+    "markdown_inline",
     "rust",
     "lua",
   }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
