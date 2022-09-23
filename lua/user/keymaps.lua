@@ -28,8 +28,13 @@ keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
 keymap("n", "<leader>fn", "<cmd>Telescope help_tags<cr>", opts)
 
 -- Editor
-keymap("n", "<C-_>", ":CommentToggle<cr>", opts)
-keymap("v", "<C-_>", ":CommentToggle<cr>", opts)
+if vim.loop.os_uname().sysname == "Darwin" then
+  keymap("n", "<C-/>", ":CommentToggle<cr>", opts)
+  keymap("v", "<C-/>", ":CommentToggle<cr>", opts)
+else
+  keymap("n", "<C-_>", ":CommentToggle<cr>", opts)
+  keymap("v", "<C-_>", ":CommentToggle<cr>", opts)
+end
 keymap("n", "<leader>1", ":noh<cr>", opts)
 keymap("n", "<leader>2", ":cclose<cr>", opts)
 
