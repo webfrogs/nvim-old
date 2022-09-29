@@ -31,23 +31,8 @@ vim.fn.sign_define("DapBreakpoint", dap_breakpoint.error)
 vim.fn.sign_define("DapStopped", dap_breakpoint.stopped)
 vim.fn.sign_define("DapBreakpointRejected", dap_breakpoint.rejected)
 
-local dapvt
-status_ok, dapvt = pcall(require, "nvim-dap-virtual-text")
-if status_ok then
-  dapvt.setup{
-    enabled = true,                     -- enable this plugin (the default)
-    enabled_commands = true,            -- create commands DapVirtualTextEnable, DapVirtualTextDisable, DapVirtualTextToggle, (DapVirtualTextForceRefresh for refreshing when debug adapter did not notify its termination)
-    highlight_changed_variables = true, -- highlight changed values with NvimDapVirtualTextChanged, else always NvimDapVirtualText
-    highlight_new_as_changed = true,   -- highlight new variables in the same way as changed variables (if highlight_changed_variables)
-    show_stop_reason = true,            -- show stop reason when stopped for exceptions
-    commented = false,                  -- prefix virtual text with comment string
-    -- experimental features:
-    virt_text_pos = 'eol',              -- position of virtual text, see `:h nvim_buf_set_extmark()`
-    all_frames = false,                 -- show virtual text for all stack frames not only current. Only works for debugpy on my machine.
-    virt_lines = false,                 -- show virtual lines instead of virtual text (will flicker!)
-    virt_text_win_col = nil             -- position the virtual text at a fixed window column (starting from the first text column) ,
-  }
-end
+-- load from json file
+require('dap.ext.vscode').load_launchjs(nil, { cppdbg = { 'cpp' } })
 
 -- dap ui
 local dapui
@@ -64,6 +49,16 @@ if status_ok then
       repl = "r",
       toggle = "t",
     },
+    -- Expand lines larger than the window
+    -- Requires >= 0.7
+    expand_lines = vim.fn.has("nvim-0.7"),
+    -- Layouts define sections of the screen to place windows.
+    -- The position can be "left", "right", "top" or "bottom".
+    -- The size specifies the height/width depending on position. It can be an Int
+    -- or a Float. Integer specifies height/width directly (i.e. 20 lines/columns) while
+    -- Float value specifies percentage (i.e. 0.3 - 30% of available lines/columns)
+    -- Elements are the elements shown in the layout (in order).
+    -- Layouts are opened in order so that earlier layouts take priority in window sizing.
     layouts = {
       {
         elements = {
@@ -80,8 +75,11 @@ if status_ok then
         position = "left", -- Can be "left", "right", "top", "bottom"
       },
       {
-        elements = { "repl" },
-        size = 5,
+        elements = {
+          "repl",
+          -- "console",
+        },
+        size = 0.25, -- 25% of total lines
         position = "bottom", -- Can be "left", "right", "top", "bottom"
       },
     },
@@ -118,4 +116,6 @@ if status_ok then
 end
 
 -- load language settings
+require "user.dap.dap-virtual-text"
 require "user.dap.settings.golang"
+
