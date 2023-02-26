@@ -13,7 +13,11 @@ if not status_ok then
 end
 
 mason_lspconfig.setup {
-    ensure_installed = { "lua_ls", "rust_analyzer" },
+    ensure_installed = {
+      "lua_ls",
+      "rust_analyzer",
+      "gopls",
+    },
 }
 
 local status_ok, lspconfig = pcall(require, "lspconfig")
@@ -25,7 +29,10 @@ end
 mason_lspconfig.setup_handlers {
   -- This is a default handler that will be called for each installed server (also for new servers that are installed during a session)
   function (server_name)
-    lspconfig[server_name].setup {}
+    lspconfig[server_name].setup {
+      on_attach = require("user.lsp.handlers").on_attach,
+      capabilities = require("user.lsp.handlers").capabilities,
+    }
   end
 }
 
