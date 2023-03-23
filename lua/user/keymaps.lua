@@ -14,6 +14,9 @@ vim.g.maplocalleader = ' '
 vim.g['go_def_mapping_enabled'] = 0
 vim.g['go_fmt_command'] = 'goimports'
 
+-- git blame settings
+vim.g['gitblame_enabled'] = 0
+
 -- Modes normal_mode = "n",
 --   insert_mode = "i",
 --   visual_mode = "v",
