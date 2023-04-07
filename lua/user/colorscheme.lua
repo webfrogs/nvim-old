@@ -1,6 +1,7 @@
-require "user.themes.github-nvim-theme"
+-- require "user.themes.github-nvim-theme"
+-- local colorscheme = "github_dark"
 
-local colorscheme = "github_dark"
+local colorscheme = "nightfox"
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then

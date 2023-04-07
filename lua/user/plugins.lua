@@ -53,6 +53,7 @@ return packer.startup(function(use)
 
   -- theme
   use "projekt0n/github-nvim-theme"
+  use "EdenEast/nightfox.nvim"
 
   -- markdown, see: https://github.com/iamcco/markdown-preview.nvim
   use({
