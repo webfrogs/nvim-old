@@ -189,9 +189,11 @@ nvim_tree.setup({
 
 --
 -- with relative path
-require "nvim-tree.events".on_file_created(function(file) vim.cmd("edit " .. file.fname) end)
--- with absolute path
--- require"nvim-tree.events".on_file_created(function(file) vim.cmd("edit "..vim.fn.fnamemodify(file.fname, ":p")) end)
+local nvim_tree_event
+status_ok, nvim_tree_event = pcall(require, "nvim-tree.events")
+if status_ok then
+ nvim_tree_event.subscribe(nvim_tree_event.Event.FileCreated, function(file) vim.cmd("edit " .. file.fname) end)
+end
 
 -- auto close feature
 vim.cmd(
