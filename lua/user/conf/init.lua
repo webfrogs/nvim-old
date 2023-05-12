@@ -1,5 +1,5 @@
 require "user.conf.nvim-tree"
-require "user.conf.nvim-treesitter"
+-- require "user.conf.nvim-treesitter"
 require "user.conf.nvim-autopairs"
 require "user.conf.nvim-comment"
 require "user.conf.nvim-notify"

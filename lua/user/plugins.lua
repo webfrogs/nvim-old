@@ -1,143 +1,23 @@
-local fn = vim.fn
-
--- Automatically install packer
-local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
-  PACKER_BOOTSTRAP = fn.system {
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
     "git",
     "clone",
-    "--depth",
-    "1",
-    "https://github.com/wbthomason/packer.nvim",
-    install_path,
-  }
-  print "Installing packer close and reopen Neovim..."
-  vim.cmd [[packadd packer.nvim]]
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
--- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.cmd [[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]]
 
 -- Use a protected call so we don't error out on first use
-local status_ok, packer = pcall(require, "packer")
+local status_ok, lazy_nvim = pcall(require, "lazy")
 if not status_ok then
   return
 end
+lazy_nvim.setup("user.lazy")
 
 
--- Have packer use a popup window
-packer.init {
-  display = {
-    open_fn = function()
-      return require("packer.util").float { border = "rounded" }
-    end,
-  },
-}
 
--- Install your plugins here
-return packer.startup(function(use)
-
-  -- My plugins
-  use "wbthomason/packer.nvim" -- Have packer manage itself
-  use "akinsho/toggleterm.nvim" -- toggle terminal
-  use "rcarriga/nvim-notify"
-  use "nvim-lua/plenary.nvim"
-  use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
-  use "fatih/vim-go"
-  use 'f-person/git-blame.nvim'
-
-  -- theme
-  use "projekt0n/github-nvim-theme"
-  use "EdenEast/nightfox.nvim"
-
-  -- markdown, see: https://github.com/iamcco/markdown-preview.nvim
-  use({
-    "iamcco/markdown-preview.nvim",
-    run = "cd app && npm install",
-    setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" },
-  })
-
-  -- Editor enhance
-  use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
-  use "terrortylor/nvim-comment"
-  use "tpope/vim-repeat" --  . command enhance
-  use "tpope/vim-surround" -- vim surround
-  use "nathom/filetype.nvim" -- speedup by replacing filetype.vim
-  -- use "andymass/vim-matchup"
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
-  use {
-    'kyazdani42/nvim-tree.lua',
-    requires = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icon
-    }
-  }
-  use {
-    'phaazon/hop.nvim',
-    branch = 'v2', -- optional but strongly recommended
-    config = function()
-      -- you can configure Hop the way you like here; see :h hop-config
-      require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
-    end
-  }
-
-  -- cmp plugins
-  use "hrsh7th/nvim-cmp" -- The completion plugin
-  use "hrsh7th/cmp-buffer" -- buffer completions
-  use "hrsh7th/cmp-path" -- path completions
-  use "hrsh7th/cmp-cmdline" -- cmdline completions
-  use "saadparwaiz1/cmp_luasnip" -- snippet completions
-  use "hrsh7th/cmp-nvim-lsp"
-  use "hrsh7th/cmp-nvim-lua"
-  use "f3fora/cmp-spell" -- spell check
-
-  -- Telescpoe
-  use {
-    'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }
-  }
-  use {
-    "nvim-telescope/telescope-fzf-native.nvim",
-    run = "make",
-  }
-  -- use "nvim-telescope/telescope-ui-select.nvim"
-  -- use "nvim-telescope/telescope-live-grep-raw.nvim"
-  use "nvim-telescope/telescope-dap.nvim"
-
-  -- Treesitter
-  use {
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-  }
-  use "lewis6991/nvim-treesitter-context" -- show class/function at the top
-
-  -- LSP
-  use "neovim/nvim-lspconfig" -- enable LSP
-  -- use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-  use "williamboman/mason.nvim" -- lsp installer
-  use "williamboman/mason-lspconfig.nvim"
-  -- use "kosayoda/nvim-lightbulb" -- code action
-  use "ray-x/lsp_signature.nvim" -- show function signature when typing
-
-  -- dap
-  use "mfussenegger/nvim-dap"
-  -- use 'Pocco81/dap-buddy.nvim'
-  use "theHamsta/nvim-dap-virtual-text"
-  use "rcarriga/nvim-dap-ui"
-
-  -- snippets
-  use "L3MON4D3/LuaSnip" --snippet engine
-
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  if PACKER_BOOTSTRAP then
-    require("packer").sync()
-  end
-end)
