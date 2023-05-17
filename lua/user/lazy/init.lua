@@ -23,7 +23,6 @@ return {
   "terrortylor/nvim-comment",
   "tpope/vim-repeat", --  . command enhance
   "tpope/vim-surround", -- vim surround
-  "nathom/filetype.nvim", -- speedup by replacing filetype.vim
   -- use "andymass/vim-matchup"
   {
     'nvim-lualine/lualine.nvim',

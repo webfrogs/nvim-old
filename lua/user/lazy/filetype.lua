@@ -1,15 +1,14 @@
-local status_ok, filetype = pcall(require, "filetype")
-if not status_ok then
-  vim.notify("filetype not found!")
-  return
-end
 
-filetype.setup({
+return {
+  "nathom/filetype.nvim", -- speedup by replacing filetype.vim
+  lazy = false,
+  opts = {
     overrides = {
         extensions = {
             -- Set the filetype of *.pn files to potion
             pn = "potion",
             sh = "sh",
+            sql = "sql",
         },
         literal = {
             -- Set the filetype of files named "MyBackupFile" to lua
@@ -51,4 +50,8 @@ filetype.setup({
             dash = "sh",
         },
     },
-})
+  },
+  config = function(_, opts)
+    require("filetype").setup(opts)
+  end
+}
