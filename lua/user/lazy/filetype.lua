@@ -9,6 +9,7 @@ return {
             pn = "potion",
             sh = "sh",
             sql = "sql",
+            xml = "xml",
         },
         literal = {
             -- Set the filetype of files named "MyBackupFile" to lua
