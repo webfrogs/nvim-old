@@ -4,7 +4,6 @@ return {
   "rcarriga/nvim-notify",
   "nvim-lua/plenary.nvim",
   "nvim-lua/popup.nvim", -- An implementation of the Popup API from vim in Neovim
-  "fatih/vim-go",
   'f-person/git-blame.nvim',
 
   -- theme
@@ -34,14 +33,6 @@ return {
       'kyazdani42/nvim-web-devicons', -- optional, for file icon
     }
   },
-  -- {
-  --   'phaazon/hop.nvim',
-  --   branch = 'v2', -- optional but strongly recommended
-  --   config = function()
-  --     -- you can configure Hop the way you like here; see :h hop-config
-  --     require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
-  --   end
-  -- },
 
   -- cmp plugins
   "hrsh7th/nvim-cmp", -- The completion plugin
