@@ -6,10 +6,11 @@ end
 
 local ft = require("guard.filetype")
 
-ft("go"):fmt("gofumpt")
-  :append("goimports")
--- ft("go"):fmt("gofmt")
---   :append("goimports")
+ft("go"):fmt("gofmt")
+  :append({
+    cmd = 'goimports',
+    stdin = true,
+  })
 
 -- Call setup() LAST!
 guard.setup({
