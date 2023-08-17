@@ -44,7 +44,7 @@ dap.configurations.go = {
     type = "go",
     name = "Debug",
     request = "launch",
-    program = "."
+    program = "${workspaceFolder}"
   },
   {
     type = "go",
