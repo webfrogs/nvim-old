@@ -32,7 +32,10 @@ vim.fn.sign_define("DapBreakpoint", dap_breakpoint.error)
 -- vim.fn.sign_define("DapBreakpointRejected", dap_breakpoint.rejected)
 
 -- load from json file
-require('dap.ext.vscode').load_launchjs(nil, { cppdbg = { 'cpp' } })
+require('dap.ext.vscode').load_launchjs(nil, {
+  cppdbg = { 'cpp' },
+  go = { 'go' },
+})
 
 -- dap ui
 local dapui

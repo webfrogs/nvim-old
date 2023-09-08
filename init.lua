@@ -5,7 +5,7 @@ require "user.colorscheme"
 
 require "user.conf"
 require "user.lsp"
-require "user.dap"
+-- require "user.dap"
 
 
 -- PATCH: in order to address the message:
