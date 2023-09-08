@@ -116,6 +116,6 @@ if status_ok then
 end
 
 -- load language settings
-require "user.dap.dap-virtual-text"
-require "user.dap.settings.golang"
+-- require "user.dap.dap-virtual-text"
+-- require "user.dap.settings.golang"
 

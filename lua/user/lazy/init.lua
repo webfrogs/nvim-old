@@ -56,11 +56,6 @@ return {
   "nvim-telescope/telescope-dap.nvim",
   "lewis6991/nvim-treesitter-context", -- show class/function at the top
 
-  -- dap
-  "mfussenegger/nvim-dap",
-  "theHamsta/nvim-dap-virtual-text",
-  "rcarriga/nvim-dap-ui",
-
   -- snippets
   "L3MON4D3/LuaSnip", --snippet engine
 }
