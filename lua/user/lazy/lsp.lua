@@ -6,6 +6,9 @@ return {
   "ray-x/lsp_signature.nvim", -- show function signature when typing
   {
     "nvimdev/guard.nvim",
+    dependencies = {
+        "nvimdev/guard-collection",
+    },
     event = "VeryLazy",
     config = function ()
       require("user.conf.guard")
