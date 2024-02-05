@@ -1,6 +1,6 @@
 return {
   -- My plugins
-  {'akinsho/toggleterm.nvim', version = "*", config = true},
+  { 'akinsho/toggleterm.nvim', version = "*", config = true },
   "rcarriga/nvim-notify",
   "nvim-lua/plenary.nvim",
   "nvim-lua/popup.nvim", -- An implementation of the Popup API from vim in Neovim
@@ -32,10 +32,15 @@ return {
     dependencies = { 'kyazdani42/nvim-web-devicons', opt = true }
   },
   {
-    'kyazdani42/nvim-tree.lua',
+    "nvim-tree/nvim-tree.lua",
+    version = "*",
+    lazy = false,
     dependencies = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icon
-    }
+      "nvim-tree/nvim-web-devicons",
+    },
+    config = function()
+      require("user.conf.nvim-tree")
+    end,
   },
 
   -- cmp plugins
@@ -51,7 +56,7 @@ return {
   -- Telescpoe
   {
     'nvim-telescope/telescope.nvim',
-    dependencies = { {'nvim-lua/plenary.nvim'} }
+    dependencies = { { 'nvim-lua/plenary.nvim' } }
   },
   {
     "nvim-telescope/telescope-fzf-native.nvim",
