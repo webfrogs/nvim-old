@@ -5,13 +5,11 @@ return {
   "williamboman/mason-lspconfig.nvim",
   "ray-x/lsp_signature.nvim", -- show function signature when typing
   {
-    "nvimdev/guard.nvim",
-    dependencies = {
-        "nvimdev/guard-collection",
-    },
+    'stevearc/conform.nvim',
+    opts = {},
     event = "VeryLazy",
     config = function ()
-      require("user.conf.guard")
-    end,
-  },
+      require("user.conf.conform")
+    end
+  }
 }
