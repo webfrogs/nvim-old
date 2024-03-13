@@ -59,10 +59,30 @@ local function lsp_highlight_document(client)
   end
 end
 
+PositionStack = {}
+
+function LspJump()
+	local currentPosition = vim.fn.winsaveview()
+	currentPosition.bufnr = vim.fn.bufnr()
+	table.insert(PositionStack, currentPosition)
+	vim.cmd("Telescope lsp_definitions")
+end
+
+function LspJumpBack()
+	if #PositionStack == 0 then
+		print("position stack is empty")
+		return
+	end
+	local position = table.remove(PositionStack)
+	vim.cmd("buffer " .. position.bufnr)
+	vim.fn.winrestview(position)
+end
+
 local function lsp_keymaps(bufnr)
   local opts = { noremap = true, silent = true }
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua LspJump()<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "gb", "<cmd>lua LspJumpBack()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
