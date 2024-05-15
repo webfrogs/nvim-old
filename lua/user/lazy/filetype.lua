@@ -10,6 +10,7 @@ return {
         sql = "sql",
         xml = "xml",
         c = "c",
+        h = "c",
       },
       literal = {
         -- Set the filetype of files named "MyBackupFile" to lua
@@ -17,7 +18,7 @@ return {
       },
       complex = {
         -- Set the filetype of any full filename matching the regex to gitconfig
-        [".*git/config"] = "gitconfig",     -- Included in the plugin
+        [".*git/config"] = "gitconfig", -- Included in the plugin
       },
 
       -- The same as the ones above except the keys map to functions
