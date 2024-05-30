@@ -24,12 +24,12 @@ return {
   -- Editor enhance
   "windwp/nvim-autopairs", -- Autopairs, integrates with both cmp and treesitter
   "terrortylor/nvim-comment",
-  "tpope/vim-repeat", --  . command enhance
-  "tpope/vim-surround", -- vim surround
+  "tpope/vim-repeat",      --  . command enhance
+  "tpope/vim-surround",    -- vim surround
   -- use "andymass/vim-matchup"
   {
     'nvim-lualine/lualine.nvim',
-    dependencies = { 'kyazdani42/nvim-web-devicons', opt = true }
+    -- dependencies = { 'kyazdani42/nvim-web-devicons', opt = true }
   },
   {
     "nvim-tree/nvim-tree.lua",
@@ -44,10 +44,10 @@ return {
   },
 
   -- cmp plugins
-  "hrsh7th/nvim-cmp", -- The completion plugin
-  "hrsh7th/cmp-buffer", -- buffer completions
-  "hrsh7th/cmp-path", -- path completions
-  "hrsh7th/cmp-cmdline", -- cmdline completions
+  "hrsh7th/nvim-cmp",         -- The completion plugin
+  "hrsh7th/cmp-buffer",       -- buffer completions
+  "hrsh7th/cmp-path",         -- path completions
+  "hrsh7th/cmp-cmdline",      -- cmdline completions
   "saadparwaiz1/cmp_luasnip", -- snippet completions
   "hrsh7th/cmp-nvim-lsp",
   "hrsh7th/cmp-nvim-lua",
