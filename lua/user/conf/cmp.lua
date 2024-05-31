@@ -114,7 +114,7 @@ end
 ---checks if emmet_ls is available and active in the buffer
 ---@return boolean true if available, false otherwise
 local is_emmet_active = function()
-  local clients = vim.lsp.buf_get_clients()
+  local clients = vim.lsp.get_clients()
 
   for _, client in pairs(clients) do
     if client.name == "emmet_ls" then
@@ -133,10 +133,12 @@ if not status_luasnip_ok then
   return
 end
 
-require("luasnip.loaders.from_vscode").lazy_load() -- load freindly-snippets
-require("luasnip.loaders.from_vscode").load({ paths = { -- load custom snippets
-  vim.fn.stdpath("config") .. "/my-snippets"
-} }) -- Load snippets from my-snippets folder
+require("luasnip.loaders.from_vscode").lazy_load()      -- load freindly-snippets
+require("luasnip.loaders.from_vscode").load({
+  paths = {                                             -- load custom snippets
+    vim.fn.stdpath("config") .. "/my-snippets"
+  }
+})                                                      -- Load snippets from my-snippets folder
 
 CMP_CONFIG = {
   confirm_opts = {

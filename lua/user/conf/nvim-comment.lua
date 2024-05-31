@@ -17,14 +17,14 @@ comment.setup {
   operator_mapping = "gc",
   -- Hook function to call before commenting takes place
   hook = function()
-    if vim.api.nvim_buf_get_option(0, "filetype") == "cpp" then  -- cutomize difference language comment marker
-      vim.api.nvim_buf_set_option(0, "commentstring", "//%s")    -- cpp use //
-    elseif  vim.api.nvim_buf_get_option(0, "filetype") == "c" then
-      vim.api.nvim_buf_set_option(0, "commentstring", "/*%s*/")  -- c use /* */
-    elseif  vim.api.nvim_buf_get_option(0, "filetype") == "go" then
-      vim.api.nvim_buf_set_option(0, "commentstring", "//%s")      -- go use //
-    elseif vim.api.nvim_buf_get_option(0, "filetype") == "shell" then
-      vim.api.nvim_buf_set_option(0, "commentstring", "#%s")      -- shell use //
+    if vim.api.nvim_get_option_value("filetype", { buf = 0 }) == "cpp" then -- cutomize difference language comment marker
+      vim.api.nvim_set_option_value("commentstring", "//%s", { buf = 0 })
+    elseif vim.api.nvim_get_option_value("filetype", { buf = 0 }) == "c" then
+      vim.api.nvim_set_option_value("commentstring", "/*%s*/", { buf = 0 })
+    elseif vim.api.nvim_get_option_value("filetype", { buf = 0 }) == "go" then
+      vim.api.nvim_set_option_value("commentstring", "//%s", { buf = 0 })
+    elseif vim.api.nvim_get_option_value("filetype", { buf = 0 }) == "shell" then
+      vim.api.nvim_set_option_value("commentstring", "#%s", { buf = 0 })
     end
   end
 }
