@@ -42,6 +42,7 @@ return {
       require("user.conf.nvim-tree")
     end,
   },
+  "nvim-treesitter/nvim-treesitter-context", -- show class/function at the top
 
   -- cmp plugins
   "hrsh7th/nvim-cmp",         -- The completion plugin
@@ -63,7 +64,6 @@ return {
     build = "make",
   },
   "nvim-telescope/telescope-dap.nvim",
-  "lewis6991/nvim-treesitter-context", -- show class/function at the top
 
   -- snippets
   "L3MON4D3/LuaSnip", --snippet engine
