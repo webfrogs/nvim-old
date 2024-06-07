@@ -26,10 +26,8 @@ return {
   "terrortylor/nvim-comment",
   "tpope/vim-repeat",      --  . command enhance
   "tpope/vim-surround",    -- vim surround
-  -- use "andymass/vim-matchup"
   {
     'nvim-lualine/lualine.nvim',
-    -- dependencies = { 'kyazdani42/nvim-web-devicons', opt = true }
   },
   {
     "nvim-tree/nvim-tree.lua",

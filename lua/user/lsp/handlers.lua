@@ -1,6 +1,5 @@
 local M = {}
 
--- TODO: backfill this to template
 M.setup = function()
   local signs = {
     { name = "DiagnosticSignError", text = "" },
@@ -79,15 +78,9 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-  -- if client.name == "tsserver" or client.name == "clangd" then
-  -- client.server_capabilities.document_formatting = false
-  -- end
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
 
-  -- add outline support for evey lanuage
-  --require("aerial").on_attach(client, bufnr)
-  --require "lsp_signature".on_attach()
   local status_ok, aerial = pcall(require, "aerial")
   if status_ok then
     aerial.on_attach(client, bufnr)
