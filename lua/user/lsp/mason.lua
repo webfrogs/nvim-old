@@ -59,10 +59,10 @@ mason_lspconfig.setup_handlers {
       opts = vim.tbl_deep_extend("force", pyright_opts, opts)
     end
 
-    if server_name == "gopls" then
-      local gopls_opts = require("user.lsp.settings.gopls")
-      opts = vim.tbl_deep_extend("force", gopls_opts, opts)
-    end
+    -- if server_name == "gopls" then
+    --   local gopls_opts = require("user.lsp.settings.gopls")
+    --   opts = vim.tbl_deep_extend("force", gopls_opts, opts)
+    -- end
 
     -- if server_name == "golangci_lint_ls" then
     --   local customer_opts = require("user.lsp.settings.golangci_lint")
