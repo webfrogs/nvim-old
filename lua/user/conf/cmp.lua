@@ -133,12 +133,12 @@ if not status_luasnip_ok then
   return
 end
 
-require("luasnip.loaders.from_vscode").lazy_load()      -- load freindly-snippets
+require("luasnip.loaders.from_vscode").lazy_load() -- load freindly-snippets
 require("luasnip.loaders.from_vscode").load({
-  paths = {                                             -- load custom snippets
+  paths = {                                        -- load custom snippets
     vim.fn.stdpath("config") .. "/my-snippets"
   }
-})                                                      -- Load snippets from my-snippets folder
+}) -- Load snippets from my-snippets folder
 
 CMP_CONFIG = {
   confirm_opts = {
@@ -312,7 +312,7 @@ cmp.setup.cmdline(':', {
 
 
 -- disable autocompletion for guihua
-vim.cmd("autocmd FileType guihua lua require('cmp').setup.buffer { enabled = false }")
-vim.cmd("autocmd FileType guihua_rust lua require('cmp').setup.buffer { enabled = false }")
+-- vim.cmd("autocmd FileType guihua lua require('cmp').setup.buffer { enabled = false }")
+-- vim.cmd("autocmd FileType guihua_rust lua require('cmp').setup.buffer { enabled = false }")
 
 cmp.setup(CMP_CONFIG)
