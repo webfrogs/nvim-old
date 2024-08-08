@@ -21,6 +21,7 @@ mason_lspconfig.setup {
     "golangci_lint_ls",
     "clangd",
     "pylsp",
+    "tsserver",
   },
 }
 
