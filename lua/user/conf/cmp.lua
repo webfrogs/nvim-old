@@ -307,7 +307,8 @@ cmp.setup.cmdline(':', {
     { name = 'cmdline' }
   }, {
     { name = 'path' }
-  })
+  }),
+  matching = { disallow_symbol_nonprefix_matching = false }
 })
 
 
